@@ -1,5 +1,4 @@
 const pages = Array.from(document.querySelectorAll('.page'));
-const loadingScreen = document.querySelector('.loading-screen');
 const heroImage = document.querySelector('.hero-image');
 const heroImages = [
   'img/2024-01-19_23.10.12.png',
@@ -9,6 +8,7 @@ const heroImages = [
 ];
 let currentPage = 0;
 let locked = false;
+let loadingScreen = null;
 
 if ('scrollRestoration' in history) {
   history.scrollRestoration = 'manual';
@@ -17,6 +17,24 @@ if ('scrollRestoration' in history) {
 if (heroImage && heroImages.length > 0) {
   const randomIndex = Math.floor(Math.random() * heroImages.length);
   heroImage.src = heroImages[randomIndex];
+}
+
+function createLoadingScreen() {
+  const screen = document.createElement('div');
+  screen.className = 'loading-screen';
+  screen.setAttribute('aria-live', 'polite');
+  screen.textContent = '加载中';
+  document.body.prepend(screen);
+  return screen;
+}
+
+function hideLoadingScreen() {
+  loadingScreen?.classList.add('is-hidden');
+
+  window.setTimeout(() => {
+    loadingScreen?.remove();
+    loadingScreen = null;
+  }, 350);
 }
 
 function resetToFirstPage() {
@@ -36,13 +54,19 @@ function syncCurrentPage() {
 
 resetToFirstPage();
 
+if (!heroImage || !heroImage.complete || heroImage.naturalWidth === 0) {
+  loadingScreen = createLoadingScreen();
+} else {
+  document.body.classList.add('is-loaded');
+}
+
 window.addEventListener('DOMContentLoaded', resetToFirstPage);
 
 window.addEventListener('load', () => {
   resetToFirstPage();
   window.setTimeout(resetToFirstPage, 50);
   window.setTimeout(resetToFirstPage, 250);
-  loadingScreen?.classList.add('is-hidden');
+  hideLoadingScreen();
   document.body.classList.add('is-loaded');
 });
 
