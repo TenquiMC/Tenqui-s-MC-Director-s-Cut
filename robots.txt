@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://你的正式域名/sitemap.xml
+Sitemap: https://dc.mc.tenqui.ink/sitemap.xml
