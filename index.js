@@ -1,4 +1,5 @@
 const pages = Array.from(document.querySelectorAll('.page'));
+const loadingScreen = document.querySelector('.loading-screen');
 const heroImage = document.querySelector('.hero-image');
 const heroImages = [
   'img/2024-01-19_23.10.12.png',
@@ -13,6 +14,10 @@ if (heroImage && heroImages.length > 0) {
   const randomIndex = Math.floor(Math.random() * heroImages.length);
   heroImage.src = heroImages[randomIndex];
 }
+
+window.addEventListener('load', () => {
+  loadingScreen?.classList.add('is-hidden');
+});
 
 function goToPage(pageIndex) {
   const clampedIndex = Math.max(0, Math.min(pageIndex, pages.length - 1));
