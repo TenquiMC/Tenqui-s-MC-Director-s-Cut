@@ -43,6 +43,7 @@ window.addEventListener('load', () => {
   window.setTimeout(resetToFirstPage, 50);
   window.setTimeout(resetToFirstPage, 250);
   loadingScreen?.classList.add('is-hidden');
+  document.body.classList.add('is-loaded');
 });
 
 window.addEventListener('pageshow', () => {

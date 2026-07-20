@@ -69,6 +69,9 @@ body {
   object-fit: cover;
   opacity: 0;
   transform: scale(1.02);
+}
+
+body.is-loaded .hero-image {
   animation: imageFadeIn 0.85s ease-out forwards;
 }
 
@@ -145,6 +148,9 @@ body {
   letter-spacing: 0.24em;
   opacity: 0;
   transform: translateX(-50%) translateY(-6px);
+}
+
+body.is-loaded .scroll-hint {
   animation: hintFadeIn 0.7s ease-out 0.7s forwards;
 }
 
