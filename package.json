@@ -1,10 +1,6 @@
 {
-  "name": "Tenqui's MC - Director’s Cut",
+  "name": "tenquis-mc-directors-cut-website",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
+  "description": "Official website for Tenqui's MC: Director's Cut.",
   "private": true
 }
