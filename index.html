@@ -32,39 +32,138 @@
         opacity: 0;
       }
     </style>
-    <link rel="stylesheet" href="style.css?v=20260720-1" />
+    <link rel="stylesheet" href="style.css?v=20260720-9" />
   </head>
   <body>
     <main>
-      <section class="page hero" aria-label="开场图片">
-        <img src="img/2026-01-26_00.03.30.png" alt="Minecraft scene" class="hero-image" />
-        <div class="hero-title" aria-label="尘柒的 MC 导演剪辑版">
-          <p class="hero-kicker">TENQUI'S MC</p>
-          <h1>
-            <span class="hero-title-small">尘柒的 MC</span>
-            <span class="hero-title-large">导演剪辑版</span>
-          </h1>
-          <p class="hero-meta">DIRECTOR'S CUT · MINECRAFT 1.21.6</p>
+      <section class="page hero is-active" aria-label="开场图片">
+        <div class="page-bg">
+          <img src="img/2026-01-26_00.03.30.png" alt="Minecraft scene" class="hero-image" />
         </div>
-        <p class="hero-subtitle">以原版为核心的轻量生存整合包</p>
-        <p class="scroll-hint">向下滚动</p>
+        <div class="hero-title text-block" aria-label="尘柒的 MC 导演剪辑版">
+          <p class="hero-kicker text-line">TENQUI'S MC</p>
+          <h1>
+            <span class="hero-title-small text-line">尘柒的 MC</span>
+            <span class="hero-title-large text-line">导演剪辑版</span>
+          </h1>
+          <p class="hero-meta text-line">DIRECTOR'S CUT · MINECRAFT 1.21.6</p>
+        </div>
+        <p class="hero-subtitle text-line">以原版为核心的轻量生存整合包</p>
+        <p class="scroll-hint text-line">向下滚动</p>
       </section>
 
-      <section class="page text-page" aria-label="文字页">
-        <div class="text-card">
-          <p class="eyebrow">Director’s Cut</p>
-          <h2>一个被重新剪辑的方块世界</h2>
-          <p>
-            这里先放一段占位文字。你可以把它换成故事简介、地图说明、角色介绍，
-            或者任何想让玩家在进入世界前看到的内容。
+      <section class="page overview-page" aria-label="整合包简介">
+        <div class="page-bg"></div>
+        <div class="section-copy text-block align-left">
+          <p class="section-kicker text-line">OVERVIEW</p>
+          <h2 class="section-title text-line">
+            轻量<br />
+            原版核心<br />
+            舒适生存
+          </h2>
+        </div>
+        <div class="section-side-note text-block align-right">
+          <p class="text-line">
+            不增加复杂科技线，不堆叠过量系统。它只把地图、镜头、交互、音效和多人体验补到更顺手。
           </p>
-          <p>
-            鼠标滚轮每次只翻一整页，页面切换保持完整、直接，不会停在半屏的位置。
+          <div class="metric-row">
+            <span class="text-line">Minecraft Java 1.21.6</span>
+            <span class="text-line">Fabric</span>
+            <span class="text-line">服务端 / 客户端双支持</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="page features-page" aria-label="主要内容">
+        <div class="page-bg"></div>
+        <div class="section-copy text-block align-left lower">
+          <p class="section-kicker text-line">FEATURES</p>
+          <h2 class="section-title text-line">
+            比原版<br />
+            多一点
+          </h2>
+        </div>
+        <div class="feature-list text-block align-right">
+          <article class="text-line">
+            <strong>客户端体验</strong>
+            <span>世界地图、小地图、越肩视角、真实相机、鞘翅翻滚。</span>
+          </article>
+          <article class="text-line">
+            <strong>服务端体验</strong>
+            <span>区块预生成、独立战利品、搬运箱子与生物、盔甲可见度。</span>
+          </article>
+          <article class="text-line">
+            <strong>生存便利</strong>
+            <span>右键收割、自动喂养、投喂玩家，以及更顺手的交互细节。</span>
+          </article>
+        </div>
+      </section>
+
+      <section class="page packs-page" aria-label="资源包与支持">
+        <div class="page-bg"></div>
+        <div class="section-copy text-block align-right top">
+          <p class="section-kicker text-line">RESOURCE PACKS</p>
+          <h2 class="section-title text-line">
+            保留原版观感<br />
+            补足细节表现
+          </h2>
+        </div>
+        <ul class="pack-list text-block align-left bottom">
+          <li class="text-line">
+            <a href="https://modrinth.com/resourcepack/fresh-animations">Fresh Animations</a>
+          </li>
+          <li class="text-line">
+            <a href="https://modrinth.com/resourcepack/dramatic-skys">Dramatic Skys Demo</a>
+          </li>
+          <li class="text-line">
+            <a href="https://modrinth.com/resourcepack/new-glowing-ores">New Glowing Ores</a>
+          </li>
+          <li class="text-line">
+            <a href="https://modrinth.com/resourcepack/no-more-glasses">No More Glasses</a>
+          </li>
+        </ul>
+      </section>
+
+      <section class="page download-page" aria-label="下载页面">
+        <div class="page-bg">
+          <img src="img/Image_1784529979863_920..png" alt="" class="page-bg-image" />
+        </div>
+        <div class="section-copy text-block align-left">
+          <p class="section-kicker text-line">DOWNLOAD</p>
+          <h2 class="section-title text-line">
+            下载最新版<br />
+            整合包
+          </h2>
+        </div>
+        <div class="download-panel text-block align-right">
+          <p class="text-line">
+            推荐使用 PCL2、HMCL 或其他支持导入 .mrpack 的启动器安装。
           </p>
+          <a
+            id="latestDownloadButton"
+            class="download-button text-line"
+            href="https://cdn.modrinth.com/data/EjCfl0xa/versions/hDDAzoIU/Tenqui%27s%20MC%20-%20Director%27s%20Cut%201.3.3.mrpack"
+          >
+            下载最新版
+          </a>
+        </div>
+        <div class="download-info text-block align-left">
+          <p class="download-meta text-line">
+            当前版本：
+            <span id="latestVersionLabel">1.3.3</span>
+            · Minecraft 1.21.6 · Fabric
+          </p>
+          <p class="download-meta text-line">
+            发布日期：
+            <span id="latestDateLabel">2026/7/20</span>
+          </p>
+          <a class="source-link text-line" href="https://modrinth.com/modpack/tenquis-mc-directors-cut">
+            查看 Modrinth 页面
+          </a>
         </div>
       </section>
     </main>
 
-    <script src="index.js?v=20260720-5"></script>
+    <script src="index.js?v=20260720-14"></script>
   </body>
 </html>
