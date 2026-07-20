@@ -23,23 +23,39 @@ function resetToFirstPage() {
   currentPage = 0;
   document.documentElement.scrollTop = 0;
   document.body.scrollTop = 0;
-  window.scrollTo(0, 0);
+  window.scrollTo({
+    top: 0,
+    left: 0,
+    behavior: 'instant',
+  });
 }
+
+function syncCurrentPage() {
+  currentPage = Math.max(0, Math.min(Math.round(window.scrollY / window.innerHeight), pages.length - 1));
+}
+
+resetToFirstPage();
+
+window.addEventListener('DOMContentLoaded', resetToFirstPage);
 
 window.addEventListener('load', () => {
   resetToFirstPage();
+  window.setTimeout(resetToFirstPage, 50);
+  window.setTimeout(resetToFirstPage, 250);
   loadingScreen?.classList.add('is-hidden');
 });
 
 window.addEventListener('pageshow', () => {
   resetToFirstPage();
   window.setTimeout(resetToFirstPage, 0);
+  window.setTimeout(resetToFirstPage, 50);
 });
 
 function goToPage(pageIndex) {
   const clampedIndex = Math.max(0, Math.min(pageIndex, pages.length - 1));
+  const targetIsAlreadyVisible = Math.abs(pages[clampedIndex].getBoundingClientRect().top) < 2;
 
-  if (clampedIndex === currentPage) {
+  if (clampedIndex === currentPage && targetIsAlreadyVisible) {
     return;
   }
 
@@ -65,6 +81,7 @@ window.addEventListener(
       return;
     }
 
+    syncCurrentPage();
     goToPage(currentPage + (event.deltaY > 0 ? 1 : -1));
   },
   { passive: false }
