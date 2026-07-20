@@ -197,6 +197,10 @@ body.is-loaded .is-leaving .text-line {
   margin: 0;
 }
 
+.mobile-recommendation {
+  display: none;
+}
+
 .hero-kicker,
 .section-kicker {
   color: #ffffff;
@@ -543,6 +547,14 @@ body.is-loaded .is-leaving .download-button.text-line {
   .download-page .download-button {
     margin-right: auto;
     margin-left: auto;
+  }
+
+  .desktop-recommendation {
+    display: none;
+  }
+
+  .mobile-recommendation {
+    display: inline;
   }
 
   .metric-row {
