@@ -119,8 +119,20 @@ async function updateLatestDownload() {
     }
 
     const versions = await response.json();
-    const latestVersion = versions.find((version) => version.version_type === 'release') ?? versions[0];
-    const primaryFile = latestVersion?.files?.find((file) => file.primary) ?? latestVersion?.files?.[0];
+    const releaseVersions = versions
+      .filter((version) => (
+        version.version_type === 'release'
+        && version.status === 'listed'
+        && version.files?.some((file) => file.filename?.toLowerCase().endsWith('.mrpack'))
+      ))
+      .sort((firstVersion, secondVersion) => (
+        new Date(secondVersion.date_published) - new Date(firstVersion.date_published)
+      ));
+    const latestVersion = releaseVersions[0];
+    const mrpackFiles = latestVersion?.files?.filter((file) => (
+      file.filename?.toLowerCase().endsWith('.mrpack')
+    ));
+    const primaryFile = mrpackFiles?.find((file) => file.primary) ?? mrpackFiles?.[0];
 
     if (!latestVersion || !primaryFile?.url) {
       return;
